@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry Luna ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #08000b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Background glow */
+body::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 0, 100, 0.18),
+        transparent 70%
+    );
+    animation: backgroundGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundGlow {
+    from {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Heart container */
+.heart-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartbeat 1.25s ease-in-out infinite;
+}
+
+.heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #ff174f;
+    transform: rotate(-45deg);
+    box-shadow:
+        0 0 20px #ff174f,
+        0 0 50px rgba(255, 23, 79, 0.8),
+        0 0 100px rgba(255, 23, 79, 0.4);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #ff174f;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -75px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 75px;
+}
+
+/* Text */
+.text {
+    position: absolute;
+    z-index: 10;
+    width: 280px;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #ff4f81,
+        0 0 25px #ff174f;
+    animation: textGlow 1.25s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff5b91;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff174f;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Different particle positions */
+.p1 { left: 10%; animation-delay: 0s; }
+.p2 { left: 20%; animation-delay: 1s; }
+.p3 { left: 30%; animation-delay: 2s; }
+.p4 { left: 40%; animation-delay: 0.5s; }
+.p5 { left: 50%; animation-delay: 1.5s; }
+.p6 { left: 60%; animation-delay: 2.5s; }
+.p7 { left: 70%; animation-delay: 3s; }
+.p8 { left: 80%; animation-delay: 1.2s; }
+.p9 { left: 90%; animation-delay: 2.2s; }
+</style>
+</head>
+
+<body>
+
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+<div class="particle p6"></div>
+<div class="particle p7"></div>
+<div class="particle p8"></div>
+<div class="particle p9"></div>
+
+<div class="heart-wrapper">
+
+    <div class="heart"></div>
+
+    <div class="text">
+        I'm sorry Luna
+    </div>
+
+</div>
+
+</body>
+</html>
